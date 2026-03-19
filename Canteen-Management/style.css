@@ -1,0 +1,242 @@
+/* ==== Global Styles ==== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #D6CC99;
+    color: #333;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ==== Header ==== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #395144;
+    color: white;
+    text-align: center;
+    padding: 4px 0;
+    font-size: 22px;
+    font-weight: 600;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ==== Sidebar ==== */
+.sidebar {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 230px;
+    height: calc(100% - 70px);
+    background-color: #4E6C50;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    z-index: 900;
+}
+
+    .sidebar a {
+        text-decoration: none;
+        color: #fff;
+        padding: 14px 25px;
+        transition: background 0.3s ease;
+        font-weight: 500;
+    }
+
+        .sidebar a:hover {
+            background-color: #0077b6;
+            border-left: 5px solid #90e0ef;
+            padding-left: 20px;
+        }
+
+/* ==== Main Area ==== */
+.main {
+    margin-left: 250px;
+    margin-top: 90px;
+    padding: 0;
+    overflow-y: auto;
+    height: calc(100vh - 90px);
+    position: relative;
+}
+
+/* ==== Card Section ==== */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(1, 1, 1, 0.3);
+    animation: fadeIn 0.5s ease;
+    margin: 0;
+    padding-top: 70px; /* To avoid overlap with heading bar */
+}
+
+    /* ==== Fixed Section Heading ==== */
+    .card h2 {
+        position: fixed;
+        top: 90px; /* below header */
+        left: 250px; /* beside sidebar */
+        width: calc(100% - 250px);
+        background-color: #ffffff;
+        color: white;
+        padding: 15px 25px;
+        margin: 0;
+        border-bottom: 2px solid #caf0f8;
+        z-index: 950;
+        font-size: 22px;
+        font-weight: 600;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+#profile div,#order div {
+    background-color: #F0F1C5;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 12px;
+    width: 250px;
+    margin: 12px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+#profile div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ==== Menu Items ==== */
+#menu div {
+    display: inline-block;
+    background-color: #F0F1C5;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    width: 250px;
+    margin: 12px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+    #menu div:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+
+#menu img {
+    border-radius: 10px;
+}
+
+/* ==== Buttons ==== */
+button {
+    background-color: #4E6C50;
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* ==== Table ==== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+th {
+    background-color: #F0F1C5;
+    color: black;
+    padding: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+    background-color: #f1f9ff;
+}
+
+.porder{
+    padding:20px;
+}
+
+.payment-container {
+    background-color: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    width: 350px;
+}
+
+#pay input, #pay select {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#pay button {
+    width: 100%;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+    #pay button:hover {
+        background-color: #0d47a1;
+    }
+
+.payment-method {
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+    .payment-method label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: normal;
+    }
+
+.hidden {
+    display: none;
+}
+/*payments page*/
+.radio-group {
+    display: flex;
+    gap: 20px; /* spacing between options */
+    align-items: center;
+    margin-top: 8px;
+}
+
+    .radio-group label {
+        display: flex;
+        align-items: center;
+        font-weight: normal;
+        cursor: pointer;
+        gap: 6px; /* space between circle and text */
+    }
+
+    .radio-group input[type="radio"] {
+        margin: 0;
+        transform: scale(1.1); /* slightly larger radio */
+    }

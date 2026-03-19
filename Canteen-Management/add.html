@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>Add item</title>
+        <style>
+            body
+            {
+                background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url("b2.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            h1{
+                text-align: center;
+                color: white;
+            }
+            div.i{
+                color: coral;
+                border: 2px outset;
+                padding: 20px;
+                margin-left: 20px;
+                margin-right: 20px;
+                background-color: white;
+            }
+            input{
+                padding: 5px;
+                margin-left: 5px;
+            }
+            #d1,#sub{
+                margin-left: 25px;
+                background-color: rgb(220, 237, 253);
+                height: 30px;
+                width: 80px;
+                border: 2px;
+                border-radius: 10px;
+                box-shadow: 0px 3px 5px 0px;
+            }
+            .h
+            {
+                padding: 80px;
+                /*background-color: rgb(191, 254, 233);*/
+                background-image: url(aitd.webp);
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: top left;
+            }
+            form{
+                margin: 0% 10% 0% 10%;
+                padding: 2%;
+                background-color: blanchedalmond;
+                border-radius:20px;
+                box-shadow: 1px 3px 10px 0px;
+            }
+            #d1:hover,#sub:hover,h2:hover
+            {
+                color: coral;
+            }
+        </style>
+        <script>
+            function submitfunc()
+            {
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <div class="h">
+        <h1>Add Item to Menu</h1>
+        </div>
+        <form onsubmit="return submitfunc()" action="add.php" method="POST">
+            <div class="i">
+                <label>Add item Name</label>
+                <input type="text" id="item" name="item" required>
+            </div>
+            <div class="i">
+                <label>Add item image url</label>
+                <input type="text" id="ico" name="ico" required>
+            </div>
+            <div class="i">
+                <label>Add item Price</label>
+                <input type="number" id="pri" name="pri" min="0" required>
+            </div>
+            <br><input type="submit" id="sub" name="sub" value="add item">
+            <br><br><button type="button" id="d1" name="d1" onclick="window.history.back()">Go Back</button>
+        </form>
+    </body>
+</html>

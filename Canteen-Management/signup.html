@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <style>
+        body {
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url("b3.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: "Segoe UI", sans-serif;
+            color: #222;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px 5px black;
+        }
+
+        form {
+            margin: 60px auto;
+            background-color: rgba(255,255,255,0.95);
+            border: 2px solid #ccc;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0px 3px 10px rgba(0,0,0,0.5);
+            width: 35%;
+            min-width: 320px;
+            max-width: 600px;
+        }
+
+        div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+            box-sizing: border-box;
+        }
+
+        #su, #re {
+            margin-right: 10px;
+            background-color: rgb(220, 237, 253);
+            height: 35px;
+            width: 90px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 3px 5px 0px gray;
+            cursor: pointer;
+        }
+
+            #su:hover, #re:hover {
+                background-color: #cce5ff;
+                color: #0077ff;
+            }
+
+        .options {
+            margin-top: 10px;
+        }
+
+            .options label {
+                font-weight: normal;
+            }
+
+        a {
+            text-decoration: none;
+            color: #0077cc;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+    </style>
+
+    <script>
+        function submitfun() {
+            var name = document.getElementById("na").value;
+            var Email = document.getElementById("em").value;
+            var password = document.getElementById("ps").value;
+            var contact = document.getElementById("cn").value;
+            var pn = /^[A-Z]{1}([a-z])* [A-Z]{1}([a-z])*$/;
+            var pe = /@aitdgoa.edu.in$/;
+            var pc = /^[789]{1}[0-9]{9}$/;
+
+            if (pn.test(name) == false) { alert("Enter Valid Name"); return false; }
+            else if (pe.test(Email) == false) { alert("Enter valid Email"); return false; }
+            else if (pc.test(contact) == false) { alert("Enter valid Contact Number"); return false; }
+            else if (password.trim().length < 6 || password.trim().length > 10) { alert("Password must have 6 to 10 characters only"); return false; }
+            else if (password.search(/[A-Z]/) == -1) { alert("Password must contain at least 1 uppercase letter"); return false; }
+            else if (password.search(/[a-z]/) == -1) { alert("Password must contain at least 1 lowercase letter"); return false; }
+            else if (password.search(/[0-9]/) == -1) { alert("Password must contain at least 1 digit"); return false; }
+            else if (password.search(/[\_\@\#\$\%\&\*\!\^\?\+\-\.]/) == -1) { alert("Password must contain at least 1 special character"); return false; }
+            else { return true; }
+        }
+
+        function resetfun() {
+            var a = confirm("Do you really want to reset all the entered data?");
+            return a;
+        }
+    </script>
+</head>
+
+<body>
+    <h1><img src="a1.jpg" height="25px" width="25px" style="vertical-align:middle;"> User Signup</h1>
+
+    <form onsubmit="return submitfun()" onreset="return resetfun()" action="signup.php" method="POST">
+        <div>
+            <label>Enter your Name</label>
+            <input type="text" id="na" name="na" placeholder="Firstname Lastname" title="FirstName LastName">
+        </div>
+
+        <div>
+            <label>Enter your college Email</label>
+            <input type="text" id="em" name="em" placeholder="xxxxxx@aitdgoa.edu.in" title="xxxxxx@aitdgoa.edu.in">
+        </div>
+
+        <div>
+            <label>Enter your contact number</label>
+            <input type="text" id="cn" name="cn" placeholder="xxxxxxxxxx" title="10-digit number">
+        </div>
+
+        <div>
+            <label>Enter your password</label>
+            <input type="password" id="ps" name="ps" placeholder="Password">
+        </div>
+
+        <div class="options">
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female
+        </div>
+
+        <div class="options">
+            <label>Select your Department:</label>
+            <select name="department">
+                <option value="">--Select Department--</option>
+                <option value="Computer">Computer</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Civil">ECE</option>
+            </select>
+        </div>
+
+        <div class="options">
+            <label>Preference:</label><br>
+            <input type="checkbox" name="interest" value="Vegetarian"> Vegetarian
+            <input type="checkbox" name="interest" value="Non-Vegetarian"> Non-Vegetarian
+        </div>
+
+        <div style="text-align:center; margin-top:20px;">
+            <input type="submit" id="su" name="su" value="Sign Up">
+            <input type="reset" id="re" name="re" value="Reset">
+        </div>
+
+        <div style="text-align:center; margin-top:15px;">
+            <a href="signin.html">Already have an account? Click here</a>
+        </div>
+    </form>
+</body>
+</html>
