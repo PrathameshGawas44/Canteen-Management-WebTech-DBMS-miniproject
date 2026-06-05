@@ -58,7 +58,3 @@ and open home.php or Adminhome.php in browser using localhost
 - All data is stored and retrieved using MySQL database
 
 ---
-
-## Author
-
-Prathamesh Gawas
